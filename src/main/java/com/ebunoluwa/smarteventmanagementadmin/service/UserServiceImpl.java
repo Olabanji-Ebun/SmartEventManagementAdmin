@@ -10,7 +10,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(UserDto userDto) {
-        User user = new User();
-        return null;
+        User user = new User(userDto.getEmail(), userDto.getPassword(), userDto.getRole(), userDto.getFullname());
+        return userRepository.save(user);
     }
 }
