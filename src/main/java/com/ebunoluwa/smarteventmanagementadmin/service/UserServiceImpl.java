@@ -3,7 +3,9 @@ package com.ebunoluwa.smarteventmanagementadmin.service;
 import com.ebunoluwa.smarteventmanagementadmin.dto.UserDto;
 import com.ebunoluwa.smarteventmanagementadmin.model.User;
 import com.ebunoluwa.smarteventmanagementadmin.repositories.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;

@@ -16,15 +16,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @GetMapping("/registration")
-    public String getRegistrationPage() {
+    public String getRegistrationPage(@ModelAttribute("user") UserDto userDto) {
         return "register";
     }
 
     @PostMapping("/registration")
-    public String saveUser(@ModelAttribute("user")UserDto userDto, Model model) {
-       userService.save(userDto);
-       model.addAttribute("message", userDto);
+    public String saveUser(@ModelAttribute("user") UserDto userDto, Model model) {
+        userService.save(userDto);
+        model.addAttribute("message", "Registered Successfuly!");
         return "register";
     }
 
