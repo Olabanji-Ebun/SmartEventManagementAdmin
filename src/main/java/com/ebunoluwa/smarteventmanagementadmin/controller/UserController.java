@@ -1,6 +1,7 @@
 package com.ebunoluwa.smarteventmanagementadmin.controller;
 
-import ch.qos.logback.core.model.Model;
+//import ch.qos.logback.core.model.Model;
+import org.springframework.ui.Model;
 import com.ebunoluwa.smarteventmanagementadmin.dto.UserDto;
 import com.ebunoluwa.smarteventmanagementadmin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class UserController {
     @PostMapping("/registration")
     public String saveUser(@ModelAttribute("user")UserDto userDto, Model model) {
        userService.save(userDto);
-       model.addAttribute("message", "Registered Successfully");
+       model.addAttribute("message", userDto);
         return "register";
     }
 
