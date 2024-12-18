@@ -8,18 +8,11 @@ public class UserDto {
     private String fullname;
 
     public UserDto(String email, String password, String role, String fullname) {
+        super();
         this.email = email;
         this.password = password;
         this.role = role;
         this.fullname = fullname;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public String getEmail() {
@@ -38,6 +31,14 @@ public class UserDto {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public String getFullname() {
         return fullname;
     }
@@ -45,7 +46,6 @@ public class UserDto {
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
-
 
 
 

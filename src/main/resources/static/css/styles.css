@@ -11,7 +11,7 @@ body {
     color: #222;
     background: #f8f8f8;
     font-weight: 400;
-    font-family: Poppins; }
+    font-family: sans-serif; }
 
 .container {
     width: 900px;
@@ -126,7 +126,9 @@ figure {
 .form-group {
     position: relative;
     margin-bottom: 25px;
-    overflow: hidden; }
+    overflow: hidden;
+    cursor: pointer;
+}
 .form-group:last-child {
     margin-bottom: 0px; }
 
@@ -134,9 +136,10 @@ input {
     width: 100%;
     display: block;
     border: none;
+    outline: none;
     border-bottom: 1px solid #999;
     padding: 6px 30px;
-    font-family: Poppins;
+    font-family: sans-serif;
     box-sizing: border-box; }
 input::-webkit-input-placeholder {
     color: #999; }
@@ -206,9 +209,13 @@ input[type=checkbox]:not(old):checked + label > span:before {
     font-family: 'Material-Design-Iconic-Font';
     font-weight: bold; }
 
+
+
 .agree-term {
     display: inline-block;
-    width: auto; }
+    width: auto;
+    cursor: pointer;
+}
 
 label {
     position: absolute;
@@ -261,66 +268,95 @@ label.valid:after {
     padding-top: 67px;
     padding-bottom: 87px; }
 
-.social-login {
-    align-items: center;
-    -moz-align-items: center;
-    -webkit-align-items: center;
-    -o-align-items: center;
-    -ms-align-items: center;
-    margin-top: 80px; }
 
+/* Container for the label and icons */
+.social-login {
+    display: flex; /* Align items in a single line */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Center the entire block horizontally */
+    gap: 10px; /* Space between elements */
+}
+
+/* Styling the label */
 .social-label {
-    display: inline-block;
-    margin-right: 15px; }
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 500;
+    text-align: center; /* Center aligns the label */
+}
+
+/* Styling the list of social media icons */
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment */
+    gap: 20px;
+}
 
 .socials li {
-    padding: 5px; }
-.socials li:last-child {
-    margin-right: 0px; }
-.socials li a {
-    text-decoration: none; }
-.socials li a i {
-    width: 30px;
-    height: 30px;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -o-border-radius: 5px;
-    -ms-border-radius: 5px;
-    transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out; }
-.socials li:hover a i {
-    -webkit-transform: scale(1.3) translateZ(0);
-    transform: scale(1.3) translateZ(0); }
+    padding: -10px;
+}
 
+.socials li a {
+    text-decoration: none;
+    display: flex; /* Makes the link a flex container */
+    justify-content: center;
+    align-items: center;
+}
+
+.socials li a i {
+    width: 40px; /* Larger size for better visibility */
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials li:hover a i {
+    transform: scale(1.2); /* Slightly reduced scaling */
+}
+
+/* Social media background colors */
 .zmdi-facebook {
-    background: #3b5998; }
+    background: #3b5998;
+}
 
 .zmdi-twitter {
-    background: #1da0f2; }
+    background: #1da0f2;
+}
 
 .zmdi-google {
-    background: #e72734; }
+    background: #e72734;
+}
+
+.zmdi-github {
+    background: #666666;
+}
 
 .signin-form {
-    margin-right: 90px;
-    margin-left: 80px; }
+    margin: 0 auto; /* Centers the form horizontally */
+    text-align: center;
+}
 
-.signin-image {
-    margin-left: 110px;
-    margin-right: 20px;
-    margin-top: 10px; }
+
+
+
+
+.message {
+    background-color: #45b6fe;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
 
 @media screen and (max-width: 1200px) {
     .container {
@@ -364,13 +400,16 @@ label.valid:after {
 
     .social-login {
         justify-content: center;
+        display:block;
         -moz-justify-content: center;
         -webkit-justify-content: center;
         -o-justify-content: center;
         -ms-justify-content: center; }
 
     .form-button {
-        text-align: center; }
+        text-align: center;
+        cursor: pointer;
+    }
 
     .signin-form {
         order: 1;
@@ -390,9 +429,15 @@ label.valid:after {
         -moz-flex-direction: column;
         -webkit-flex-direction: column;
         -o-flex-direction: column;
-        -ms-flex-direction: column; }
+        -ms-flex-direction: column;
+    }
 
     .social-label {
         margin-right: 0px;
-        margin-bottom: 10px; } }
+        margin-bottom: 10px;
+    }
+}
+
+
+
 

@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Form</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
     <!-- Font Icon -->
-    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" th:href="@{../fonts/material-icon/css/material-design-iconic-font.min.css}">
+
+    <script>
+        function clearForm() {
+            document.getElementById("register-form").reset();  // This clears all inputs in the form
+        }
+    </script>
 
 </head>
 <body>
@@ -17,23 +23,26 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-form">
-                    <h2 class="form-title">Register</h2>
+                    <div class="message" th:if="${message != null}">
+                        [[${message}]]
+                    </div>
+                    <h2 class="form-title">Registration Form</h2>
 
-                    <form method="post" action="registration" role="form" class="register-form"
+                    <form method="post" th:action="@{registration}" role="form" th:object="${user}" class="register-form"
                           id="register-form">
                         <div class="form-group">
                             <label for="fullname"><span class="zmdi zmdi-account material-icons-name"></span></label>
-                            <input type="text" name="name" id="fullname" placeholder="Enter your Name" required/>
+                            <input th:field="*{fullname}" type="text" name="name" id="fullname" placeholder="Enter your Name" required/>
                         </div>
 
                         <div class="form-group">
                             <label for="email"><span class="zmdi zmdi-email"></span></label>
-                            <input  type="email" name="email" id="email" placeholder="Enter your Email" required/>
+                            <input th:field="*{email}" type="email" name="email" id="email" placeholder="Enter your Email" required/>
                         </div>
 
                         <div class="form-group">
                             <label for="password"><span class="zmdi zmdi-lock"></span></label>
-                            <input type="password" name="password" id="password" placeholder="Enter Your password" required/>
+                            <input th:field="*{password}" type="password" name="password" id="password" placeholder="Enter Your password" required/>
                         </div>
 
                         <div class="form-group form-button">
