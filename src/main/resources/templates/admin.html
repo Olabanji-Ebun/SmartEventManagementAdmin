@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e2433;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #45b6fe;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .containers {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #0e2433;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-button a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .form-submit {
+            display: inline-block;
+            background: #6dabe4;
+            color: #fff;
+            border-bottom: none;
+            width: auto;
+            padding: 15px 39px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -o-border-radius: 5px;
+            -ms-border-radius: 5px;
+            margin-top: 25px;
+            cursor: pointer; }
+
+        h2 {
+            color: #45b6fe;
+        }
+
+        /* Add more styles and components for your dashboard here */
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>ADMIN Dashboard</h1>
+</div>
+<div class="containers">
+    <h2>Welcome, [[${user.getFullname()}]]</h2>
+
+    <span sec:authorize="isAuthenticated">
+      <div class="form-group form-button">
+          <button class="form-submit"><a th:href="@{/logout}">Logout</a></button>
+      </div>
+
+  </span>
+
+</div>
+</body>
+</html>

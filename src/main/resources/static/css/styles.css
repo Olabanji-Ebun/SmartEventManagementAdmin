@@ -329,9 +329,6 @@ label.valid:after {
     background: #3b5998;
 }
 
-.zmdi-twitter {
-    background: #1da0f2;
-}
 
 .zmdi-google {
     background: #e72734;
@@ -347,6 +344,14 @@ label.valid:after {
 }
 
 
+.containers {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #0e2433;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 
 

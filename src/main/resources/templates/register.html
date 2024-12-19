@@ -8,10 +8,14 @@
     <link rel="stylesheet" th:href="@{../fonts/material-icon/css/material-design-iconic-font.min.css}">
 
     <script>
-        function clearForm() {
-            document.getElementById("register-form").reset();  // This clears all inputs in the form
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            const messageElement = document.querySelector(".message");
+            if (messageElement && messageElement.textContent.includes("successful")) {
+                document.getElementById("register-form").reset();
+            }
+        });
     </script>
+
 
 </head>
 <body>
@@ -49,6 +53,11 @@
                             <input type="submit" class="form-submit" value="Register" />
                         </div>
                     </form>
+
+                    <div class="form-group form-button">
+                        <h6 class="signup-image-link">Already have an account? <a href="http://localhost:8080/login">Login</a></h6>
+                    </div>
+
                 </div>
             </div>
         </div>
