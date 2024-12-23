@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>map</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            "packages":["map"],
+            // Note: you will need to get a mapsApiKey for your project.
+            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+            "mapsApiKey": "AIzaSyB6RiphL6e2Io8DQA8eFMBcoRxuS92vaRo"
+        });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Lat', 'Long', 'Name'],
+                [6.717966,  3.235194, 'Aptech Education Centre']
+            ]);
+
+            var map = new google.visualization.Map(document.getElementById('map_div'));
+            map.draw(data, {
+                showTooltip: true,
+                showInfoWindow: true
+            });
+        }
+
+    </script>
+
+    <style>
+        #map_div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Offset to truly center */
+            width: 800px; /* Adjust width */
+            height: 700px; /* Adjust height */
+            background-color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="map_div"></div>
+</body>
+
+</html>
